@@ -4,7 +4,7 @@
 #include "j1Module.h"
 #include "SDL\include\SDL_pixels.h"
 
-#define DEFAULT_FONT "fonts/open_sans/OpenSans-Regular.ttf"
+#define DEFAULT_FONT "fonts/wow_fonts/SKURRI.ttf"
 #define DEFAULT_FONT_SIZE 23
 
 struct SDL_Texture;
