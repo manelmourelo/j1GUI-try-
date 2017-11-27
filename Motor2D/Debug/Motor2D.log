@@ -1,37 +1,17 @@
-﻿  pugixml.cpp
-  j1Window.cpp
-  j1Textures.cpp
-  j1Render.cpp
-  p2Log.cpp
-  j1Timer.cpp
-  j1Scene.cpp
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(98): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(101): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(104): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(107): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
-  j1PerfTimer.cpp
-  j1Pathfinding.cpp
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\p2point.h(114): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\p2point.h(110): note: durante la compilación de la función miembro de plantilla clase de 'int p2Point<int>::DistanceTo(const p2Point<int> &) const'
-  c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1pathfinding.cpp(160): note: vea la referencia a la creación de instancias de plantilla de función 'int p2Point<int>::DistanceTo(const p2Point<int> &) const' que se está compilando
-  c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1pathfinding.h(81): note: vea la referencia a la creación de instancias de plantilla clase de 'p2Point<int>' que se está compilando
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\p2point.h(114): warning C4244: 'return': conversión de 'float' a 'int'; posible pérdida de datos
-  j1Map.cpp
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1map.cpp(106): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1map.cpp(107): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  j1Input.cpp
-  j1Audio.cpp
-  j1App.cpp
+﻿  j1App.cpp
 c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1app.cpp(217): warning C4018: '<': no coinciden signed/unsigned
 c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1app.cpp(213): warning C4477: 'sprintf_s' : la cadena de formato '%lu' requiere un argumento de tipo 'unsigned long', pero el argumento variádico 6 tiene el tipo 'uint64'
   c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1app.cpp(213): note: considere el uso de ' %llu' en la cadena de formato
   c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1app.cpp(213): note: considere el uso de ' %I64u' en la cadena de formato
-  j1Main.cpp
+  Generando código...
+  Compilando...
+  j1Scene.cpp
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(118): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(121): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(124): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(127): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
   j1Gui.cpp
   j1Fonts.cpp
-  GUITEXT.cpp
-  GUILABEL.cpp
-  GUI.cpp
   Generando código...
   Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\GUI(try)\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
   Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\GUI(try)\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
