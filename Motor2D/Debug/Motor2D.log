@@ -1,0 +1,7 @@
+﻿  j1Scene.cpp
+c:\users\usuario\desktop\dev_class11_handout2\motor2d\j1scene.cpp(98): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\dev_class11_handout2\motor2d\j1scene.cpp(101): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\dev_class11_handout2\motor2d\j1scene.cpp(104): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\dev_class11_handout2\motor2d\j1scene.cpp(107): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+  Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\Dev_class11_handout2\Debug\Development - Class 11 Handout2.exe
+  Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\Dev_class11_handout2\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
