@@ -20,9 +20,10 @@ class GUI;
 
 struct GUIinfo {
 	GUI_Types type = GUI_Types::NO_TYPE;
-	int x, y;
+	int x, y, h, w;
 	SDL_Rect anim;
 	SDL_Texture* texture;
+	int state;
 };
 // ---------------------------------------------------
 class j1Gui : public j1Module
@@ -55,7 +56,7 @@ public:
 	// Gui creation functions
 	bool AddLabel(int x, int y, SDL_Rect anim);
 	bool AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font);
-	bool AddButton();
+	bool AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font);
 	bool AddcheckBox();
 
 	const SDL_Texture* GetAtlas() const;
@@ -67,6 +68,7 @@ private:
 	GUIinfo queue[MAX_UI_ELEMENTS];
 	GUI* GUI_Elements[MAX_UI_ELEMENTS];
 	SDL_Texture* texture_text;
+	iPoint mousePosition;
 
 	void CreateGUI(const GUIinfo& info);
 };

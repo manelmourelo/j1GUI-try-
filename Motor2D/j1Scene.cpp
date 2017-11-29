@@ -48,26 +48,28 @@ bool j1Scene::Start()
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
 	//Background
-	App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 });
-	 //WOW Logo
-	App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 });
-	//ESRB
-	App->gui->AddLabel(36, 960, { 2046, 724, 128, 40 });
-	//Blizzard Logo
-	App->gui->AddLabel(871, 958, { 1985, 66, 128, 78 });
+	//App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 });
+	// //WOW Logo
+	//App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 });
+	////ESRB
+	//App->gui->AddLabel(36, 960, { 2046, 724, 128, 40 });
+	////Blizzard Logo
+	//App->gui->AddLabel(871, 958, { 1985, 66, 128, 78 });
 
-	//Account name
-	App->gui->AddText(870, 522, "Account Name", {255,255,0}, App->font->default);
-	//Account Password
-	App->gui->AddText(845, 625, "Account Password", { 255,255,0 }, App->font->default);
-	//WoWps.org TBC
-	App->gui->AddText(1701, 889, "WoWps.org TBC", { 59,59,59 }, App->font->default);
-	//Version 2.0.12 (6546) (Release)
-	App->gui->AddText(5, 1000, "Version 2.0.12 (6546) (Release)", { 255,255,0 }, App->font->default);
-	//Mar 30 2007
-	App->gui->AddText(5, 1024, "Mar 30 2007", { 255,255,0 }, App->font->default);
-	//Copyright 2004-2007  Blizzard Entertainment. All Rights Reserved.
-	App->gui->AddText(567, 1024, "Copyright 2004-2007  Blizzard Entertainment. All Rights Reserved.", { 255,255,0 }, App->font->default);
+	////Account name
+	//App->gui->AddText(870, 522, "Account Name", {255,255,0}, App->font->default);
+	////Account Password
+	//App->gui->AddText(845, 625, "Account Password", { 255,255,0 }, App->font->default);
+	////WoWps.org TBC
+	//App->gui->AddText(1701, 889, "WoWps.org TBC", { 59,59,59 }, App->font->default);
+	////Version 2.0.12 (6546) (Release)
+	//App->gui->AddText(5, 1000, "Version 2.0.12 (6546) (Release)", { 255,255,0 }, App->font->default);
+	////Mar 30 2007
+	//App->gui->AddText(5, 1024, "Mar 30 2007", { 255,255,0 }, App->font->default);
+	////Copyright 2004-2007  Blizzard Entertainment. All Rights Reserved.
+	//App->gui->AddText(567, 1024, "Copyright 2004-2007  Blizzard Entertainment. All Rights Reserved.", { 255,255,0 }, App->font->default);
+
+	App->gui->AddButton(200, 50, { 642,169,229,69 }, nullptr, { 255,255,0 }, App->font->default);
 
 	return true;
 }
@@ -126,7 +128,7 @@ bool j1Scene::Update(float dt)
 	if(App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 		App->render->camera.x -= floor(200.0f * dt);
 
-	//App->map->Draw();
+	App->map->Draw();
 
 	int x, y;
 	App->input->GetMousePosition(x, y);

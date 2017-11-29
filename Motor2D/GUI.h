@@ -22,6 +22,7 @@ public:
 	virtual ~GUI();
 
 	virtual void Draw(SDL_Texture* sprites);
+	virtual void Interact(int state) {};
 };
 
 #endif // __GUI_H__

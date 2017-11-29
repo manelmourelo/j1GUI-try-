@@ -9,6 +9,7 @@
 #include "GUI.h"
 #include "GUILABEL.h"
 #include "GUITEXT.h"
+#include "GUIBUTTON.h"
 
 
 
@@ -51,16 +52,43 @@ bool j1Gui::PreUpdate()
 			queue[i].type = GUI_Types::NO_TYPE;
 		}
 	}
+
+	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
+		if (GUI_Elements[i] != nullptr) {
+			GUI_Elements[i]->Interact(queue[i].state);
+		}
+	}
+
 	return true;
 }
 
 bool j1Gui::Update(float dt)
 {
+	App->input->GetMousePosition(mousePosition.x, mousePosition.y);
+
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
 		if (GUI_Elements[i] != nullptr) {
 			GUI_Elements[i]->Draw(queue[i].texture);
 		}
 	}
+
+	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
+		if (GUI_Elements[i] != nullptr) {
+			if (mousePosition.x>queue[i].x && mousePosition.x<queue[i].x+ queue[i].w && mousePosition.y>queue[i].y && mousePosition.y<queue[i].y + queue[i].h) {
+				LOG("MouseIsOnButton");
+				if () {
+					queue[i].state = 2;
+				}
+				else {
+					queue[i].state = 1;
+				}
+			}
+			else {
+				queue[i].state = 0;
+			}
+		}
+	}
+
 	return true;
 }
 
@@ -105,7 +133,7 @@ void j1Gui::CreateGUI(const GUIinfo& info) {
 		switch (info.type)
 		{
 		case GUI_Types::BUTTON:
-			//GUI_Elements[i] = new Enemy_gargoyle(info.x, info.y);
+			GUI_Elements[i] = new GUI_Button(info.x, info.y, info.anim);
 			break;
 		case GUI_Types::LABEL:
 			GUI_Elements[i] = new GUI_Label(info.x, info.y, info.anim);
@@ -130,6 +158,8 @@ bool j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
 			queue[i].type = LABEL;
 			queue[i].x = x;
 			queue[i].y = y;
+			queue[i].w = anim.w;
+			queue[i].h = anim.h;
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
 			ret = true;
@@ -150,6 +180,8 @@ bool j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 			queue[i].type = TEXT;
 			queue[i].x = x;
 			queue[i].y = y;
+			queue[i].w = w;
+			queue[i].h = h;
 			queue[i].anim = {0,0,w,h};
 			queue[i].texture = App->font->Print(text.GetString(), color, font);
 			ret = true;
@@ -159,8 +191,30 @@ bool j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 
 	return ret;
 }
-bool j1Gui::AddButton() {
-	return true;
+bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font) {
+	bool ret = true;
+	int text_w = 0, text_h = 0;
+	App->font->CalcSize(text.GetString(), text_w, text_h, App->font->default);
+	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i)
+	{
+		if (queue[i].type == GUI_Types::NO_TYPE)
+		{
+			queue[i].type = BUTTON;
+			queue[i].x = x;
+			queue[i].y = y;
+			queue[i].w = anim.w;
+			queue[i].h = anim.h;
+			queue[i].anim = anim;
+			queue[i].texture = atlas;
+			queue[i].state = 0;
+			ret = true;
+			break;
+		}
+	}
+	if(text!=NULL){
+		App->gui->AddText(x + (anim.w / 2) - (text_w / 2), y + (anim.h / 2) - (text_h / 2), text, color, font);
+	}
+	return ret;
 }
 bool j1Gui::AddcheckBox() {
 	return true;

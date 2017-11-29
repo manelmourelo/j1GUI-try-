@@ -127,7 +127,6 @@ bool j1Input::PreUpdate()
 			break;
 		}
 	}
-
 	return true;
 }
 
