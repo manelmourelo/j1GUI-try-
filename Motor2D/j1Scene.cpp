@@ -69,7 +69,10 @@ bool j1Scene::Start()
 	////Copyright 2004-2007  Blizzard Entertainment. All Rights Reserved.
 	//App->gui->AddText(567, 1024, "Copyright 2004-2007  Blizzard Entertainment. All Rights Reserved.", { 255,255,0 }, App->font->default);
 
-	App->gui->AddButton(200, 50, { 642,169,229,69 }, nullptr, { 255,255,0 }, App->font->default);
+	App->gui->AddButton(200, 50, { 642,169,229,69 }, "1", { 255,255,0 }, App->font->default);
+	App->gui->AddButton(450, 50, { 642,169,229,69 }, "2", { 255,255,0 }, App->font->default);
+	App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default);
+	App->gui->AddButton(450, 150, { 642,169,229,69 }, "4", { 255,255,0 }, App->font->default);
 
 	return true;
 }

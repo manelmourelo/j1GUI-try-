@@ -76,8 +76,9 @@ bool j1Gui::Update(float dt)
 		if (GUI_Elements[i] != nullptr) {
 			if (mousePosition.x>queue[i].x && mousePosition.x<queue[i].x+ queue[i].w && mousePosition.y>queue[i].y && mousePosition.y<queue[i].y + queue[i].h) {
 				LOG("MouseIsOnButton");
-				if () {
+				if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) {
 					queue[i].state = 2;
+					LOG("Button clicked");
 				}
 				else {
 					queue[i].state = 1;

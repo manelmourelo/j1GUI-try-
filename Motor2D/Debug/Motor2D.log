@@ -1,4 +1,7 @@
-﻿  j1Gui.cpp
-c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1gui.cpp(79): warning C4806: '==': unsafe operation: no value of type 'bool' promoted to type 'SDL_EventType' can equal the given constant
-  Motor2D.vcxproj -> C:\Users\manelmm3\Desktop\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
-  Motor2D.vcxproj -> C:\Users\manelmm3\Desktop\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
+﻿  j1Scene.cpp
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(123): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(126): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(129): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(132): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+  Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\GUI(try)\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
+  Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\GUI(try)\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
