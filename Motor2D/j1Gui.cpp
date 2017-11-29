@@ -10,6 +10,7 @@
 #include "GUILABEL.h"
 #include "GUITEXT.h"
 #include "GUIBUTTON.h"
+#include "j1Scene.h"
 
 
 
@@ -74,21 +75,52 @@ bool j1Gui::Update(float dt)
 
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
 		if (GUI_Elements[i] != nullptr) {
+			if (queue[i].state == 1) {
+				if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
+					for (uint j = 0; j < MAX_UI_ELEMENTS; ++j) {
+						if (GUI_Elements[j] != nullptr && queue[j].num == queue[i].num + 1) {
+							LOG("fdsgdfgfdghdfghdf");
+							queue[i].state = 0;
+							queue[j].state = 1;
+							LOG("%i", queue[j].num);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
+		if (GUI_Elements[i] != nullptr) {
 			if (mousePosition.x>queue[i].x && mousePosition.x<queue[i].x+ queue[i].w && mousePosition.y>queue[i].y && mousePosition.y<queue[i].y + queue[i].h) {
-				LOG("MouseIsOnButton");
+				LOG("MouseIsOnButton %i", queue[i].num);
 				if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) {
 					queue[i].state = 2;
-					LOG("Button clicked");
+					buttonClicked(queue[i].num);
+					//LOG("Button clicked");
 				}
 				else {
 					queue[i].state = 1;
 				}
+				//if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
+				//	for (uint j = 0; j < MAX_UI_ELEMENTS; ++j) {
+				//		if (GUI_Elements[j] != nullptr && queue[j].num == queue[i].num + 1) {
+				//			LOG("fdsgdfgfdghdfghdf");
+				//			queue[i].state = 0;
+				//			queue[j].state = 1;
+				//			LOG("%i", j);
+				//			i = j;
+				//		}
+				//	}
+				//}
 			}
 			else {
 				queue[i].state = 0;
 			}
 		}
 	}
+
+
 
 	return true;
 }
@@ -161,8 +193,10 @@ bool j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
 			queue[i].y = y;
 			queue[i].w = anim.w;
 			queue[i].h = anim.h;
+			queue[i].num = numLabels;
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
+			numLabels++;
 			ret = true;
 			break;
 		}
@@ -183,8 +217,10 @@ bool j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 			queue[i].y = y;
 			queue[i].w = w;
 			queue[i].h = h;
+			queue[i].num = numTexts;
 			queue[i].anim = {0,0,w,h};
 			queue[i].texture = App->font->Print(text.GetString(), color, font);
+			numTexts++;
 			ret = true;
 			break;
 		}
@@ -205,10 +241,12 @@ bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 			queue[i].y = y;
 			queue[i].w = anim.w;
 			queue[i].h = anim.h;
+			queue[i].num = numButtons;
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
 			queue[i].state = 0;
 			ret = true;
+			numButtons++;
 			break;
 		}
 	}
@@ -219,5 +257,9 @@ bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 }
 bool j1Gui::AddcheckBox() {
 	return true;
+}
+
+void j1Gui::buttonClicked(int button) {
+	App->scene->buttonClicked = button+1;
 }
 

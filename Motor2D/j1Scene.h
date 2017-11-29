@@ -34,6 +34,8 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
+	int buttonClicked = 0;
+
 private:
 	SDL_Texture* debug_tex;
 	GuiImage* banner;

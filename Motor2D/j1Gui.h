@@ -24,6 +24,7 @@ struct GUIinfo {
 	SDL_Rect anim;
 	SDL_Texture* texture;
 	int state;
+	int num;
 };
 // ---------------------------------------------------
 class j1Gui : public j1Module
@@ -58,6 +59,7 @@ public:
 	bool AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font);
 	bool AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font);
 	bool AddcheckBox();
+	void buttonClicked(int button);
 
 	const SDL_Texture* GetAtlas() const;
 
@@ -69,6 +71,9 @@ private:
 	GUI* GUI_Elements[MAX_UI_ELEMENTS];
 	SDL_Texture* texture_text;
 	iPoint mousePosition;
+	int numButtons = 0;
+	int numLabels = 0;
+	int numTexts = 0;
 
 	void CreateGUI(const GUIinfo& info);
 };

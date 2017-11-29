@@ -23,5 +23,4 @@ void GUI_Button::Interact(int state) {
 	else {
 		animation = &idle;
 	}
-	LOG("hjchcgfh");
 }
