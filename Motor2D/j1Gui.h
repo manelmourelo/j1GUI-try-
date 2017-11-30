@@ -68,12 +68,14 @@ private:
 	SDL_Texture* atlas;
 	p2SString atlas_file_name;
 	GUIinfo queue[MAX_UI_ELEMENTS];
+	int buttons[MAX_UI_ELEMENTS];
 	GUI* GUI_Elements[MAX_UI_ELEMENTS];
 	SDL_Texture* texture_text;
 	iPoint mousePosition;
 	int numButtons = 0;
 	int numLabels = 0;
 	int numTexts = 0;
+	int buttonsIterator = 0;
 
 	void CreateGUI(const GUIinfo& info);
 };

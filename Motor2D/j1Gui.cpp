@@ -73,22 +73,20 @@ bool j1Gui::Update(float dt)
 		}
 	}
 
-	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
-		if (GUI_Elements[i] != nullptr) {
-			if (queue[i].state == 1) {
-				if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
-					for (uint j = 0; j < MAX_UI_ELEMENTS; ++j) {
-						if (GUI_Elements[j] != nullptr && queue[j].num == queue[i].num + 1) {
-							LOG("fdsgdfgfdghdfghdf");
-							queue[i].state = 0;
-							queue[j].state = 1;
-							LOG("%i", queue[j].num);
-						}
-					}
-				}
-			}
-		}
-	}
+	//if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
+	//	if (buttonsIterator == 0) {
+	//		queue[buttons[buttonsIterator]].state = 1;
+	//		buttonsIterator++;
+	//	}
+	//	else {
+	//		queue[buttons[buttonsIterator]].state = 0;
+	//		queue[buttons[buttonsIterator]].state = 1;
+	//		buttonsIterator++;
+	//		if (buttonsIterator == numButtons) {
+	//			buttonsIterator = 0;
+	//		}
+	//	}
+	//}
 
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
 		if (GUI_Elements[i] != nullptr) {
@@ -97,22 +95,10 @@ bool j1Gui::Update(float dt)
 				if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) {
 					queue[i].state = 2;
 					buttonClicked(queue[i].num);
-					//LOG("Button clicked");
 				}
 				else {
 					queue[i].state = 1;
 				}
-				//if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
-				//	for (uint j = 0; j < MAX_UI_ELEMENTS; ++j) {
-				//		if (GUI_Elements[j] != nullptr && queue[j].num == queue[i].num + 1) {
-				//			LOG("fdsgdfgfdghdfghdf");
-				//			queue[i].state = 0;
-				//			queue[j].state = 1;
-				//			LOG("%i", j);
-				//			i = j;
-				//		}
-				//	}
-				//}
 			}
 			else {
 				queue[i].state = 0;
@@ -246,6 +232,10 @@ bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 			queue[i].texture = atlas;
 			queue[i].state = 0;
 			ret = true;
+			for (uint j = 0; j < numButtons; j++) {
+				buttons[j] = i;
+				break;
+			}
 			numButtons++;
 			break;
 		}

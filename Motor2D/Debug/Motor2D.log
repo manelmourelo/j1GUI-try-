@@ -1,7 +1,8 @@
-﻿  j1Scene.cpp
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(123): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(126): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(129): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(132): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+﻿cl : Línea de comandos warning D9028: error de recompilación mínimo, revirtiendo a la compilación normal
+  j1Scene.cpp
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(138): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(141): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(144): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\desktop\gui(try)\j1gui-try-\motor2d\j1scene.cpp(147): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
   Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\GUI(try)\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
   Motor2D.vcxproj -> C:\Users\USUARIO\Desktop\GUI(try)\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
