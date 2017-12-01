@@ -16,6 +16,10 @@ enum GUI_Types {
 	CHECKBOX
 };
 
+enum GUI_INTERACTION {
+	
+};
+
 class GUI;
 
 struct GUIinfo {
@@ -25,6 +29,7 @@ struct GUIinfo {
 	SDL_Texture* texture;
 	int state;
 	int num;
+	GUI* father;
 };
 // ---------------------------------------------------
 class j1Gui : public j1Module
@@ -55,10 +60,10 @@ public:
 
 	// TODO 2: Create the factory methods
 	// Gui creation functions
-	bool AddLabel(int x, int y, SDL_Rect anim);
-	bool AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font);
-	bool AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font);
-	bool AddcheckBox();
+	GUI* AddLabel(int x, int y, SDL_Rect anim);
+	GUI* AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font);
+	GUI* AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font);
+	GUI* AddcheckBox();
 	void buttonClicked(int button);
 
 	const SDL_Texture* GetAtlas() const;

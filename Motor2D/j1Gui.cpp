@@ -167,8 +167,8 @@ void j1Gui::CreateGUI(const GUIinfo& info) {
 	}
 }
 
-bool j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
-	bool ret = false;
+GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
+	GUI* ret = nullptr;
 
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i)
 	{
@@ -183,15 +183,15 @@ bool j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
 			numLabels++;
-			ret = true;
+			ret = GUI_Elements[i];
 			break;
 		}
 	}
 	return ret;
 }
 
-bool j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font) {
-	bool ret = true;
+GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font) {
+	GUI* ret = nullptr;
 	int w=0, h=0;
 	App->font->CalcSize(text.GetString(), w, h, App->font->default);
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i)
@@ -207,15 +207,15 @@ bool j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 			queue[i].anim = {0,0,w,h};
 			queue[i].texture = App->font->Print(text.GetString(), color, font);
 			numTexts++;
-			ret = true;
+			ret = GUI_Elements[i];
 			break;
 		}
 	}
 
 	return ret;
 }
-bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font) {
-	bool ret = true;
+GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font) {
+	GUI* ret = nullptr;
 	int text_w = 0, text_h = 0;
 	App->font->CalcSize(text.GetString(), text_w, text_h, App->font->default);
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i)
@@ -231,7 +231,7 @@ bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
 			queue[i].state = 0;
-			ret = true;
+			ret = GUI_Elements[i];
 			for (uint j = 0; j < numButtons; j++) {
 				buttons[j] = i;
 				break;
@@ -245,9 +245,9 @@ bool j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 	}
 	return ret;
 }
-bool j1Gui::AddcheckBox() {
-	return true;
-}
+//GUI* j1Gui::AddcheckBox() {
+//	return true;
+//}
 
 void j1Gui::buttonClicked(int button) {
 	App->scene->buttonClicked = button+1;
