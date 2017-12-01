@@ -7,8 +7,13 @@
 GUI_Button::GUI_Button(int x, int y, SDL_Rect anim) : GUI(x, y)
 {
 	idle.PushBack(anim);
-	ButtonClicked.PushBack({ 2279,650,167,45 });
-	Mouse_on_Button.PushBack({ 2028,559,167,45 });
+	//WOW
+	//ButtonClicked.PushBack({ 2279,650,167,45 });
+	//Mouse_on_Button.PushBack({ 2028,559,167,45 });
+
+	//RicardAtlas
+	ButtonClicked.PushBack({ 411,169,229,69 });
+	Mouse_on_Button.PushBack({ 0,113,229,69 });
 
 	animation = &idle;
 }
