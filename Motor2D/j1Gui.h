@@ -60,9 +60,9 @@ public:
 
 	// TODO 2: Create the factory methods
 	// Gui creation functions
-	GUI* AddLabel(int x, int y, SDL_Rect anim);
-	GUI* AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font);
-	GUI* AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font);
+	GUI* AddLabel(int x, int y, SDL_Rect anim, GUI* father);
+	GUI* AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father);
+	GUI* AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father);
 	GUI* AddcheckBox();
 	void buttonClicked(int button);
 

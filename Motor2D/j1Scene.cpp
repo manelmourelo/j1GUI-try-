@@ -84,10 +84,10 @@ bool j1Scene::Start()
 	////Quit Button
 	//App->gui->AddButton(1646, 997, { 2273,538,167,45 }, "Quit", { 255,255,0 }, App->font->default);
 
-	App->gui->AddButton(200, 50, { 642,169,229,69 }, "1", { 255,255,0 }, App->font->default);
-	App->gui->AddButton(450, 50, { 642,169,229,69 }, "2", { 255,255,0 }, App->font->default);
-	App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default);
-	App->gui->AddButton(450, 150, { 642,169,229,69 }, "EXIT GAME", { 255,255,0 }, App->font->default);
+	App->gui->AddButton(200, 50, { 642,169,229,69 }, "1", { 255,255,0 }, App->font->default, NULL);
+	App->gui->AddButton(450, 50, { 642,169,229,69 }, "2", { 255,255,0 }, App->font->default, NULL);
+	App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default, NULL);
+	App->gui->AddButton(450, 150, { 642,169,229,69 }, "EXIT GAME", { 255,255,0 }, App->font->default, NULL);
 
 	return true;
 }

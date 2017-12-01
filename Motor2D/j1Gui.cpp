@@ -167,7 +167,7 @@ void j1Gui::CreateGUI(const GUIinfo& info) {
 	}
 }
 
-GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
+GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim, GUI* father) {
 	GUI* ret = nullptr;
 
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i)
@@ -175,13 +175,20 @@ GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
 		if (queue[i].type == GUI_Types::NO_TYPE)
 		{
 			queue[i].type = LABEL;
-			queue[i].x = x;
-			queue[i].y = y;
+			if (father != NULL) {
+				queue[i].x = father->position.x + x;
+				queue[i].y = father->position.y + y;
+			}
+			else {
+				queue[i].x = x;
+				queue[i].y = y;
+			}
 			queue[i].w = anim.w;
 			queue[i].h = anim.h;
 			queue[i].num = numLabels;
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
+			queue[i].father = father;
 			numLabels++;
 			ret = GUI_Elements[i];
 			break;
@@ -190,7 +197,7 @@ GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim) {
 	return ret;
 }
 
-GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font) {
+GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father) {
 	GUI* ret = nullptr;
 	int w=0, h=0;
 	App->font->CalcSize(text.GetString(), w, h, App->font->default);
@@ -199,13 +206,20 @@ GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 		if (queue[i].type == GUI_Types::NO_TYPE)
 		{
 			queue[i].type = TEXT;
-			queue[i].x = x;
-			queue[i].y = y;
+			if (father != NULL) {
+				queue[i].x = father->position.x + x;
+				queue[i].y = father->position.y + y;
+			}
+			else {
+				queue[i].x = x;
+				queue[i].y = y;
+			}
 			queue[i].w = w;
 			queue[i].h = h;
 			queue[i].num = numTexts;
 			queue[i].anim = {0,0,w,h};
 			queue[i].texture = App->font->Print(text.GetString(), color, font);
+			queue[i].father = father;
 			numTexts++;
 			ret = GUI_Elements[i];
 			break;
@@ -214,7 +228,7 @@ GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 
 	return ret;
 }
-GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font) {
+GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father) {
 	GUI* ret = nullptr;
 	int text_w = 0, text_h = 0;
 	App->font->CalcSize(text.GetString(), text_w, text_h, App->font->default);
@@ -223,14 +237,21 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 		if (queue[i].type == GUI_Types::NO_TYPE)
 		{
 			queue[i].type = BUTTON;
-			queue[i].x = x;
-			queue[i].y = y;
+			if (father != NULL) {
+				queue[i].x = father->position.x + x;
+				queue[i].y = father->position.y + y;
+			}
+			else {
+				queue[i].x = x;
+				queue[i].y = y;
+			}
 			queue[i].w = anim.w;
 			queue[i].h = anim.h;
 			queue[i].num = numButtons;
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
 			queue[i].state = 0;
+			queue[i].father = father;
 			ret = GUI_Elements[i];
 			for (uint j = 0; j < numButtons; j++) {
 				buttons[j] = i;
@@ -241,7 +262,7 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 		}
 	}
 	if(text!=NULL){
-		App->gui->AddText(x + (anim.w / 2) - (text_w / 2), y + (anim.h / 2) - (text_h / 2), text, color, font);
+		App->gui->AddText(x + (anim.w / 2) - (text_w / 2), y + (anim.h / 2) - (text_h / 2), text, color, font, GUI_Elements[numButtons-1]);
 	}
 	return ret;
 }

@@ -1,7 +1,4 @@
-﻿  j1Scene.cpp
-c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1scene.cpp(139): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1scene.cpp(142): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1scene.cpp(145): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1scene.cpp(148): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+﻿  j1Gui.cpp
+c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1gui.cpp(256): warning C4018: '<': signed/unsigned mismatch
   Motor2D.vcxproj -> C:\Users\manelmm3\Desktop\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
   Motor2D.vcxproj -> C:\Users\manelmm3\Desktop\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
