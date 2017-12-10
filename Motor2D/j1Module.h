@@ -72,6 +72,11 @@ public:
 		return true;
 	}
 
+	virtual void GUIInteract(GUI* g)
+	{
+		
+	}
+
 public:
 
 	p2SString	name;

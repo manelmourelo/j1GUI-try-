@@ -1,4 +1,46 @@
-﻿  j1Gui.cpp
-c:\users\manelmm3\desktop\j1gui-try-\motor2d\j1gui.cpp(256): warning C4018: '<': signed/unsigned mismatch
-  Motor2D.vcxproj -> C:\Users\manelmm3\Desktop\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
-  Motor2D.vcxproj -> C:\Users\manelmm3\Desktop\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
+﻿  j1Window.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Textures.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Scene.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(139): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(142): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(145): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(148): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+  j1Render.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Pathfinding.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Map.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1map.cpp(106): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1map.cpp(107): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  j1Main.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Input.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Gui.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1gui.cpp(98): error C2660: 'j1Module::GUIInteract': la función no acepta 1 argumentos
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1gui.cpp(260): warning C4018: '<': no coinciden signed/unsigned
+  j1Fonts.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1Audio.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  j1App.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.h(37): error C2061: error de sintaxis: identificador 'GUI'
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(217): warning C4018: '<': no coinciden signed/unsigned
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(213): warning C4477: 'sprintf_s' : la cadena de formato '%lu' requiere un argumento de tipo 'unsigned long', pero el argumento variádico 6 tiene el tipo 'uint64'
+  c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(213): note: considere el uso de ' %llu' en la cadena de formato
+  c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(213): note: considere el uso de ' %I64u' en la cadena de formato
+  GUITEXT.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  GUILABEL.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  GUIBUTTON.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  GUI.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1module.h(75): error C2061: error de sintaxis: identificador 'GUI'
+  Generando código...

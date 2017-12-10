@@ -29,7 +29,7 @@ bool j1Gui::Awake(pugi::xml_node& conf)
 	LOG("Loading GUI atlas");
 	bool ret = true;
 
-	atlas_file_name = conf.child("atlas").attribute("file").as_string("");
+	atlas_file_name = conf.child("atlasWOW").attribute("file").as_string("");
 
 	return ret;
 }
@@ -95,6 +95,7 @@ bool j1Gui::Update(float dt)
 				if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) {
 					queue[i].state = 2;
 					buttonClicked(queue[i].num);
+					queue[i].callback->GUIInteract(GUI_Elements[i]);
 				}
 				else {
 					queue[i].state = 1;
@@ -167,7 +168,7 @@ void j1Gui::CreateGUI(const GUIinfo& info) {
 	}
 }
 
-GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim, GUI* father) {
+GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim, GUI* father, j1Module* callback) {
 	GUI* ret = nullptr;
 
 	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i)
@@ -189,6 +190,7 @@ GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim, GUI* father) {
 			queue[i].anim = anim;
 			queue[i].texture = atlas;
 			queue[i].father = father;
+			queue[i].callback = callback;
 			numLabels++;
 			ret = GUI_Elements[i];
 			break;
@@ -197,7 +199,7 @@ GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim, GUI* father) {
 	return ret;
 }
 
-GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father) {
+GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father, j1Module* callback) {
 	GUI* ret = nullptr;
 	int w=0, h=0;
 	App->font->CalcSize(text.GetString(), w, h, App->font->default);
@@ -220,6 +222,7 @@ GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 			queue[i].anim = {0,0,w,h};
 			queue[i].texture = App->font->Print(text.GetString(), color, font);
 			queue[i].father = father;
+			queue[i].callback = callback;
 			numTexts++;
 			ret = GUI_Elements[i];
 			break;
@@ -228,7 +231,7 @@ GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 
 	return ret;
 }
-GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father) {
+GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father, j1Module* callback) {
 	GUI* ret = nullptr;
 	int text_w = 0, text_h = 0;
 	App->font->CalcSize(text.GetString(), text_w, text_h, App->font->default);
@@ -252,6 +255,7 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 			queue[i].texture = atlas;
 			queue[i].state = 0;
 			queue[i].father = father;
+			queue[i].callback = callback;
 			ret = GUI_Elements[i];
 			for (uint j = 0; j < numButtons; j++) {
 				buttons[j] = i;
@@ -262,7 +266,7 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 		}
 	}
 	if(text!=NULL){
-		App->gui->AddText(x + (anim.w / 2) - (text_w / 2), y + (anim.h / 2) - (text_h / 2), text, color, font, GUI_Elements[numButtons-1]);
+		App->gui->AddText(x + (anim.w / 2) - (text_w / 2), y + (anim.h / 2) - (text_h / 2), text, color, font, GUI_Elements[numButtons-1],callback);
 	}
 	return ret;
 }

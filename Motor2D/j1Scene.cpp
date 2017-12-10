@@ -48,13 +48,13 @@ bool j1Scene::Start()
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
 	//Background
-	//App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 });
-	// //WOW Logo
-	//App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 });
-	////ESRB
-	//App->gui->AddLabel(36, 960, { 2046, 724, 128, 40 });
-	////Blizzard Logo
-	//App->gui->AddLabel(871, 958, { 1985, 66, 128, 78 });
+	App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 },NULL,this);
+	 //WOW Logo
+	App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 },NULL,this);
+	//ESRB
+	App->gui->AddLabel(36, 960, { 2046, 724, 128, 40 },NULL,this);
+	//Blizzard Logo
+	App->gui->AddLabel(871, 958, { 1985, 66, 128, 78 },NULL,this);
 
 	////Account name
 	//App->gui->AddText(870, 522, "Account Name", {255,255,0}, App->font->default);
@@ -84,10 +84,10 @@ bool j1Scene::Start()
 	////Quit Button
 	//App->gui->AddButton(1646, 997, { 2273,538,167,45 }, "Quit", { 255,255,0 }, App->font->default);
 
-	App->gui->AddButton(200, 50, { 642,169,229,69 }, "1", { 255,255,0 }, App->font->default, NULL);
-	App->gui->AddButton(450, 50, { 642,169,229,69 }, "2", { 255,255,0 }, App->font->default, NULL);
-	App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default, NULL);
-	App->gui->AddButton(450, 150, { 642,169,229,69 }, "EXIT GAME", { 255,255,0 }, App->font->default, NULL);
+	App->gui->AddButton(200, 50, { 642,169,229,69 }, "1", { 255,255,0 }, App->font->default, NULL,this);
+	App->gui->AddButton(450, 50, { 642,169,229,69 }, "2", { 255,255,0 }, App->font->default, NULL, this);
+	App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default, NULL, this);
+	App->gui->AddButton(450, 150, { 642,169,229,69 }, "EXIT GAME", { 255,255,0 }, App->font->default, NULL, this);
 
 	return true;
 }
@@ -223,4 +223,9 @@ bool j1Scene::CleanUp()
 	LOG("Freeing scene");
 
 	return true;
+}
+
+void j1Scene::GUIInteract(GUI* g)
+{
+	LOG("Ei");
 }

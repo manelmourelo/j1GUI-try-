@@ -34,6 +34,8 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
+	void GUIInteract(GUI* g);
+
 	int buttonClicked = 0;
 
 private:
