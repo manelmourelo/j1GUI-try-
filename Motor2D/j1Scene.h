@@ -6,6 +6,7 @@
 struct SDL_Texture;
 class GuiImage;
 class GuiText;
+class GUI;
 
 class j1Scene : public j1Module
 {
@@ -34,7 +35,7 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
-	void GUIInteract(GUI* g);
+	void j1Scene::GUIInteract(GUI* g);
 
 	int buttonClicked = 0;
 

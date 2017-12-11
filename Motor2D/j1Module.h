@@ -11,6 +11,8 @@
 
 class j1App;
 
+class GUI;
+
 class j1Module
 {
 public:
@@ -72,10 +74,7 @@ public:
 		return true;
 	}
 
-	virtual void GUIInteract(GUI* g)
-	{
-		
-	}
+	virtual void GUIInteract(GUI* g){}
 
 public:
 
