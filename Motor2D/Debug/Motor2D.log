@@ -1,7 +1,20 @@
-﻿  j1Scene.cpp
+﻿  j1Gui.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1gui.cpp(261): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...
+  Compilando...
+  j1Scene.cpp
 c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(157): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
 c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(160): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
 c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(163): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
 c:\users\usuario\documents\github\j1gui-try-\motor2d\j1scene.cpp(166): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+  j1App.cpp
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(217): warning C4018: '<': no coinciden signed/unsigned
+c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(213): warning C4477: 'sprintf_s' : la cadena de formato '%lu' requiere un argumento de tipo 'unsigned long', pero el argumento variádico 6 tiene el tipo 'uint64'
+  c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(213): note: considere el uso de ' %llu' en la cadena de formato
+  c:\users\usuario\documents\github\j1gui-try-\motor2d\j1app.cpp(213): note: considere el uso de ' %I64u' en la cadena de formato
+  GUITEXT.cpp
+  GUILABEL.cpp
+  GUIBUTTON.cpp
+  Generando código...
   Motor2D.vcxproj -> C:\Users\Usuario\Documents\GitHub\j1GUI-try-\Debug\Development - Class 11 Handout2.exe
   Motor2D.vcxproj -> C:\Users\Usuario\Documents\GitHub\j1GUI-try-\Debug\Development - Class 11 Handout2.pdb (Partial PDB)
