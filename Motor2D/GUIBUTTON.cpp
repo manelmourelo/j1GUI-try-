@@ -3,6 +3,7 @@
 #include "SDL\include\SDL_timer.h"
 #include "p2Log.h"
 #include "j1GUI.h"
+#include "GUITEXT.h"
 
 GUI_Button::GUI_Button(int x, int y, SDL_Rect anim) : GUI(x, y)
 {
@@ -12,8 +13,8 @@ GUI_Button::GUI_Button(int x, int y, SDL_Rect anim) : GUI(x, y)
 	//Mouse_on_Button.PushBack({ 2028,559,167,45 });
 
 	//RicardAtlas
-	ButtonClicked.PushBack({ 411,169,229,69 });
-	Mouse_on_Button.PushBack({ 0,113,229,69 });
+	ButtonClicked.PushBack({ 0,56,132,56 });
+	Mouse_on_Button.PushBack({ 402,232,128,51 });
 
 	animation = &idle;
 }
@@ -21,9 +22,11 @@ GUI_Button::GUI_Button(int x, int y, SDL_Rect anim) : GUI(x, y)
 void GUI_Button::Interact(int state) {
 	if (state == 1) {
 		animation = &Mouse_on_Button;
+		
 	}
 	else if (state == 2) {
 		animation = &ButtonClicked;
+		
 	}
 	else {
 		animation = &idle;

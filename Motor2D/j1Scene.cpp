@@ -48,16 +48,16 @@ bool j1Scene::Start()
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
 	//Background
-	App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 },NULL,this);
+	//App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 },NULL,this);
 	 //WOW Logo
-	App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 },NULL,this);
+//	App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 },NULL,this);
 	//ESRB
-	App->gui->AddLabel(36, 960, { 2046, 724, 128, 40 },NULL,this);
+//	App->gui->AddLabel(36, 960, { 2046, 724, 128, 40 },NULL,this);
 	//Blizzard Logo
-	App->gui->AddLabel(871, 958, { 1985, 66, 128, 78 },NULL,this);
+//	App->gui->AddLabel(871, 958, { 1985, 66, 128, 78 },NULL,this);
 
 	////Account name
-	//App->gui->AddText(870, 522, "Account Name", {255,255,0}, App->font->default);
+	//App->gui->AddText(870, 522, "Account Name", { 255,255,0 }, App->font->default, NULL, this);
 	////Account Password
 	//App->gui->AddText(845, 625, "Account Password", { 255,255,0 }, App->font->default);
 	////WoWps.org TBC
@@ -83,11 +83,18 @@ bool j1Scene::Start()
 	//App->gui->AddButton(1646, 833, { 2273,538,167,45 }, "Terms of Use", { 255,255,0 }, App->font->default);
 	////Quit Button
 	//App->gui->AddButton(1646, 997, { 2273,538,167,45 }, "Quit", { 255,255,0 }, App->font->default);
-
-	App->gui->AddButton(200, 50, { 642,169,229,69 }, "1", { 255,255,0 }, App->font->default, NULL,this);
-	App->gui->AddButton(450, 50, { 642,169,229,69 }, "2", { 255,255,0 }, App->font->default, NULL, this);
-	App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default, NULL, this);
-	App->gui->AddButton(450, 150, { 642,169,229,69 }, "EXIT GAME", { 255,255,0 }, App->font->default, NULL, this);
+	 App->gui->AddText(100, 100, "Wizard's power", { 255,255,0 }, App->font->default,NULL,this);
+	//App->gui->AddLabel(200, 100, { 332,298,468,302 }, NULL, this);
+	App->gui->AddButton(375, 50, { 0,0,130,52 }, "Play", { 255,255,255 }, App->font->default, NULL,this);
+	App->gui->AddButton(375, 120, { 0,0,130,52 }, "Continue", { 255,255,255 }, App->font->default, NULL, this);
+	App->gui->AddButton(375, 190, { 0,0,130,52 }, "Settings", { 255,255,255}, App->font->default, NULL, this);
+	App->gui->AddButton(375, 260, { 0,0,130,52 }, "Credits", { 255,255,255}, App->font->default, NULL, this);
+	App->gui->AddButton(375, 330, { 0,0,130,52 }, "Exit", { 255,255,255 }, App->font->default, NULL, this);
+	
+	
+//	App->gui->AddLabel(455, 50, { 255,341,461,237 }, NULL, this);
+	//App->gui->AddButton(200, 150, { 642,169,229,69 }, "3", { 255,255,0 }, App->font->default, NULL, this);
+	//App->gui->AddButton(450, 150, { 642,169,229,69 }, "EXIT GAME", { 255,255,0 }, App->font->default, NULL, this);
 
 	return true;
 }
