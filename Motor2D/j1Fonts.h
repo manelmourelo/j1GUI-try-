@@ -4,8 +4,8 @@
 #include "j1Module.h"
 #include "SDL\include\SDL_pixels.h"
 
-#define DEFAULT_FONT "fonts/wow_fonts/SKURRI.ttf"
-#define DEFAULT_FONT_SIZE 20
+#define DEFAULT_FONT "fonts/wow_fonts/LibreBaskerville-Italic.ttf"
+#define DEFAULT_FONT_SIZE 30
 
 struct SDL_Texture;
 struct _TTF_Font;

@@ -48,7 +48,14 @@ bool j1Scene::Start()
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
 	//Background
-	//App->gui->AddLabel(0, 0, { 0, 0, 1920, 1080 },NULL,this);
+	label1 = App->gui->AddLabel(0, 0, { 799, 23, 1024, 768 },NULL,this);
+	label2 = App->gui->AddLabel(40, 30, { 52, 387, 150, 150 }, NULL, this);
+	label3 = App->gui->AddLabel(310 ,23, { 362, 336, 367, 89 }, NULL, this);
+	label4 = App->gui->AddLabel(700,400, { 408, 484, 201, 236 }, NULL, this);
+	text_menu = App->gui->AddText(440, 45, "MENU", { 255,255,255 }, App->font->default, NULL, this);
+	text_history = App->gui->AddText(50, 230, "       This is the", { 255,255,255 },App->font->default,NULL,this);
+	text_history2 = App->gui->AddText(50, 270, "  beginning of a", { 255,255,255 }, App->font->default, NULL, this);
+	text_history3 = App->gui->AddText(50, 310, "great adventure", { 255,255,255 }, App->font->default, NULL, this);
 	 //WOW Logo
 //	App->gui->AddLabel(46, 36, { 1962, 311, 254, 99 },NULL,this);
 	//ESRB
@@ -83,13 +90,13 @@ bool j1Scene::Start()
 	//App->gui->AddButton(1646, 833, { 2273,538,167,45 }, "Terms of Use", { 255,255,0 }, App->font->default);
 	////Quit Button
 	//App->gui->AddButton(1646, 997, { 2273,538,167,45 }, "Quit", { 255,255,0 }, App->font->default);
-	 App->gui->AddText(100, 100, "Wizard's power", { 255,255,0 }, App->font->default,NULL,this);
+	// App->gui->AddText(100, 100, "Wizard's power", { 255,255,0 }, App->font->default,NULL,this);
 	//App->gui->AddLabel(200, 100, { 332,298,468,302 }, NULL, this);
-	App->gui->AddButton(375, 50, { 0,0,130,52 }, "Play", { 255,255,255 }, App->font->default, NULL,this);
-	App->gui->AddButton(375, 120, { 0,0,130,52 }, "Continue", { 255,255,255 }, App->font->default, NULL, this);
-	App->gui->AddButton(375, 190, { 0,0,130,52 }, "Settings", { 255,255,255}, App->font->default, NULL, this);
-	App->gui->AddButton(375, 260, { 0,0,130,52 }, "Credits", { 255,255,255}, App->font->default, NULL, this);
-	App->gui->AddButton(375, 330, { 0,0,130,52 }, "Exit", { 255,255,255 }, App->font->default, NULL, this);
+	button_start = App->gui->AddButton(400, 150, { 0,4,182,56 }, "Play", { 255,255,255 }, App->font->default, NULL,this);
+	button_continue = App->gui->AddButton(400, 220, { 0,0,182,56 }, "Continue", { 255,255,255 }, App->font->default, NULL, this);
+	button_settings = App->gui->AddButton(400, 290, { 0,0,182,56 }, "Settings", { 255,255,255}, App->font->default, NULL, this);
+	button_exit = App->gui->AddButton(400, 360, { 0,0,182,56 }, "Exit", { 255,255,255}, App->font->default, NULL, this);
+	button_credits = App->gui->AddButton(400, 430, { 0,0,182,56 }, "Credits", { 255,255,255 }, App->font->default, NULL, this);
 	
 	
 //	App->gui->AddLabel(455, 50, { 255,341,461,237 }, NULL, this);
@@ -133,6 +140,10 @@ bool j1Scene::PreUpdate()
 bool j1Scene::Update(float dt)
 {
 	bool ret = true;
+	if (close == true)
+	{
+		ret = false;
+	}
 	// Gui ---
 	
 	// -------
@@ -202,9 +213,9 @@ bool j1Scene::Update(float dt)
 		buttonClicked = 0;
 		break;
 	case 4:
-		LOG("BUTTON 4 Clicked");
+	/*	LOG("BUTTON 4 Clicked");
 		buttonClicked = 0;
-		ret = false;
+		ret = false;*/
 		break;
 	default:
 		break;
@@ -234,5 +245,26 @@ bool j1Scene::CleanUp()
 
 void j1Scene::GUIInteract(GUI* g)
 {
-	LOG("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+	LOG("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+	if (g == button_start)
+	{
+
+	}
+	if (g == button_continue)
+	{
+
+	}
+	if (g == button_settings)
+	{
+
+	}
+	if (g == button_credits)
+	{
+
+	}
+	if (g == button_exit )
+	{
+		LOG("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+		close = true;
+	}
 }

@@ -30,6 +30,7 @@ struct GUIinfo {
 	int state;
 	int num;
 	GUI* father;
+	GUI* same;
 	j1Module* callback;
 };
 // ---------------------------------------------------

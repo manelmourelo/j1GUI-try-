@@ -43,6 +43,22 @@ private:
 	SDL_Texture* debug_tex;
 	GuiImage* banner;
 	GuiText* text;
+public:
+	GUI* text_menu;
+	GUI* text_history;
+	GUI* text_history2;
+	GUI* text_history3;
+	GUI* button_start;
+	GUI* button_continue;
+	GUI* button_settings;
+	GUI* button_credits;
+	GUI* button_exit;
+	GUI* label1;
+	GUI* label2;
+	GUI* label3;
+	GUI* label4;
+
+	bool close = false;
 };
 
 #endif // __j1SCENE_H__

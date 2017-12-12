@@ -13,8 +13,8 @@ GUI_Button::GUI_Button(int x, int y, SDL_Rect anim) : GUI(x, y)
 	//Mouse_on_Button.PushBack({ 2028,559,167,45 });
 
 	//RicardAtlas
-	ButtonClicked.PushBack({ 0,56,132,56 });
-	Mouse_on_Button.PushBack({ 402,232,128,51 });
+	ButtonClicked.PushBack({ 0,65,182,56 });
+	Mouse_on_Button.PushBack({ 402,232,182,56 });
 
 	animation = &idle;
 }

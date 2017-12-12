@@ -256,6 +256,7 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 			queue[i].state = 0;
 			queue[i].father = father;
 			queue[i].callback = callback;
+			//GUI_Elements[i] = &queue[i];
 			ret = GUI_Elements[i];
 			for (uint j = 0; j < numButtons; j++) {
 				buttons[j] = i;
