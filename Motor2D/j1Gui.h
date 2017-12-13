@@ -84,7 +84,7 @@ private:
 	int numTexts = 0;
 	int buttonsIterator = 0;
 
-	void CreateGUI(const GUIinfo& info);
+	GUI* CreateGUI(const GUIinfo& info);
 };
 
 #endif // __j1GUI_H__
