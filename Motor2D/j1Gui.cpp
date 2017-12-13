@@ -73,6 +73,28 @@ bool j1Gui::Update(float dt)
 		}
 	}
 
+	//for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
+	//	if (GUI_Elements[i] != nullptr) {
+	//		if (queue[i].father != NULL) {
+	//			queue[i].father->position.x++;
+	//			queue[i].father->position.y++;
+	//			queue[i - 1].x++;
+	//			queue[i - 1].y++;
+	//		}
+	//	}
+	//}
+
+	for (uint i = 0; i < MAX_UI_ELEMENTS; ++i) {
+		if (GUI_Elements[i] != nullptr) {
+			if (queue[i].father != NULL) {
+				queue[i].x = queue[i].father->position.x + queue[i].xInFather;
+				queue[i].y = queue[i].father->position.y + queue[i].yInFather;
+				GUI_Elements[i]->position.x = queue[i].father->position.x + queue[i].xInFather;
+				GUI_Elements[i]->position.y = queue[i].father->position.y + queue[i].yInFather;
+			}
+		}
+	}
+
 	//if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
 	//	if (buttonsIterator == 0) {
 	//		queue[buttons[buttonsIterator]].state = 1;
@@ -94,7 +116,6 @@ bool j1Gui::Update(float dt)
 				LOG("MouseIsOnButton %i", queue[i].num);
 				if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) {
 					queue[i].state = 2;
-					buttonClicked(queue[i].num);
 					queue[i].callback->GUIInteract(GUI_Elements[i]);
 				}
 				else {
@@ -179,10 +200,14 @@ GUI* j1Gui::AddLabel(int x, int y, SDL_Rect anim, GUI* father, j1Module* callbac
 			if (father != NULL) {
 				queue[i].x = father->position.x + x;
 				queue[i].y = father->position.y + y;
+				queue[i].xInFather = x;
+				queue[i].yInFather = y;
 			}
 			else {
 				queue[i].x = x;
 				queue[i].y = y;
+				queue[i].xInFather = 0;
+				queue[i].yInFather = 0;
 			}
 			queue[i].w = anim.w;
 			queue[i].h = anim.h;
@@ -211,10 +236,14 @@ GUI* j1Gui::AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* fo
 			if (father != NULL) {
 				queue[i].x = father->position.x + x;
 				queue[i].y = father->position.y + y;
+				queue[i].xInFather = x;
+				queue[i].yInFather = y;
 			}
 			else {
 				queue[i].x = x;
 				queue[i].y = y;
+				queue[i].xInFather = 0;
+				queue[i].yInFather = 0;
 			}
 			queue[i].w = w;
 			queue[i].h = h;
@@ -243,10 +272,14 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 			if (father != NULL) {
 				queue[i].x = father->position.x + x;
 				queue[i].y = father->position.y + y;
+				queue[i].xInFather = x;
+				queue[i].yInFather = y;
 			}
 			else {
 				queue[i].x = x;
 				queue[i].y = y;
+				queue[i].xInFather = 0;
+				queue[i].yInFather = 0;
 			}
 			queue[i].w = anim.w;
 			queue[i].h = anim.h;
@@ -273,8 +306,4 @@ GUI* j1Gui::AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color col
 //GUI* j1Gui::AddcheckBox() {
 //	return true;
 //}
-
-void j1Gui::buttonClicked(int button) {
-	App->scene->buttonClicked = button+1;
-}
 

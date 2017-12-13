@@ -16,6 +16,7 @@ public:
 	iPoint position;
 	int type;
 	int id;
+	uint ElementNum;
 
 public:
 	GUI(int x, int y);

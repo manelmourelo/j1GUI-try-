@@ -195,32 +195,6 @@ bool j1Scene::Update(float dt)
 		App->render->Blit(debug_tex, pos.x, pos.y);
 	}
 
-	//Buttons Clicked
-	switch (buttonClicked)
-	{
-	case 0:
-		break;
-	case 1:
-		LOG("BUTTON 1 Clicked");
-		buttonClicked = 0;
-		break;
-	case 2:
-		LOG("BUTTON 2 Clicked");
-		buttonClicked = 0;
-		break;
-	case 3:
-		LOG("BUTTON 3 Clicked");
-		buttonClicked = 0;
-		break;
-	case 4:
-	/*	LOG("BUTTON 4 Clicked");
-		buttonClicked = 0;
-		ret = false;*/
-		break;
-	default:
-		break;
-	}
-
 	return ret;
 }
 

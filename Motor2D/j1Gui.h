@@ -24,7 +24,7 @@ class GUI;
 
 struct GUIinfo {
 	GUI_Types type = GUI_Types::NO_TYPE;
-	int x, y, h, w;
+	int x, y, h, w, xInFather, yInFather;
 	SDL_Rect anim;
 	SDL_Texture* texture;
 	int state;
@@ -66,7 +66,6 @@ public:
 	GUI* AddText(int x, int y, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father, j1Module* callback);
 	GUI* AddButton(int x, int y, SDL_Rect anim, p2SString text, SDL_Color color, _TTF_Font* font, GUI* father, j1Module* callback);
 	GUI* AddcheckBox();
-	void buttonClicked(int button);
 
 	const SDL_Texture* GetAtlas() const;
 
