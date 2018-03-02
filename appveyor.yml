@@ -5,7 +5,7 @@ build:
   verbosity: minimal
   
   after_build:
-- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Motor2D\Debug\Motor2D.exe"
-- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Motor2D\Resources"
-- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Motor2D\*.dll"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\j1GUI-try\Debug\Motor2D.exe"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\j1GUI-try\Game"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\j1GUI-try\*.dll"
 - 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\README.md"
