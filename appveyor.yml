@@ -5,7 +5,7 @@ build:
   verbosity: minimal
   
   after_build:
-- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Project\Debug\Spike_FlanStudio.exe"
-- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Project\Resources"
-- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Project\*.dll"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Motor2D\Debug\Spike_FlanStudio.exe"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Motor2D\Resources"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Motor2D\*.dll"
 - 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\README.md"
