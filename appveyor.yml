@@ -3,3 +3,9 @@ image: Visual Studio 2017
 clone_depth: 1
 build:
   verbosity: minimal
+  
+  after_build:
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Project\Debug\Spike_FlanStudio.exe"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Project\Resources"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\Spike Project\*.dll"
+- 7z a SpikeFromAppveyor.zip "%APPVEYOR_BUILD_FOLDER%\README.md"
